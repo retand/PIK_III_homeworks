@@ -1,4 +1,4 @@
-// Задача 17; Илиян Петров, Ф.Н:121212123 ,Гр. 55 ,КСТ
+// Task 17; Iliyan Petrov, F.N.:121212123 ,Group 55 ,KST
 import java.util.Scanner;
 
 public class Main {
