@@ -1,10 +1,25 @@
-// Task 17; Iliyan Petrov, F.N.:121212123 ,Group 55 ,KST
+// Task 17; Iliyan Petrov, F.N:121212123 ,Group 55 ,KST
 import java.util.Scanner;
 
 public class Main {
 	public static int[][] table = new int[101][101];
 	public static Scanner sc = new Scanner(System.in);
-	public static int ships,br=0,iCoord=0,check;
+	public static int ships,br=0,iCoord=0,check,x1,x2,y1,y2;
+	
+	public static int[] swapIfNecessary(int a, int b){
+		int[] ab= {a,b};
+		if (a>b){
+			iCoord=1;
+			int temp;
+			System.out.println("Invalid coordinate. They will be inverted.");
+			temp=a;
+			a=b;
+			b=temp;
+			ab[0]=a;
+			ab[1]=b;
+			}
+		 return ab;
+	}
 	
 	public static void buildShip(int x1, int x2, int y1, int y2){
 		outerfor:
@@ -32,7 +47,7 @@ public class Main {
 		}
 	}
 	public static void main(String[] args) {
-		int x1,x2,y1,y2,temp;
+		int arr[];
 		if(iCoord==0){
 		System.out.println("How many ships do you like to build ?");
 		ships = sc.nextInt();
@@ -46,20 +61,13 @@ public class Main {
 			y1 = sc.nextInt();
 			System.out.printf("Enter second y: ");
 			y2 = sc.nextInt();
-			if (x1>x2){ 
-				iCoord=1; 
-				System.out.println("Invalid coordinate. They will be inverted."); 
-				temp=x1;
-				x1=x2;
-				x2=temp;
-			}
-			if (y1>y2){
-				iCoord=1;
-				System.out.println("Invalid coordinate. They will be inverted.");
-				temp=y1;
-				y1=y2;
-				y2=temp;
-		}
+	
+			arr=swapIfNecessary(x1, x2);
+			x1=arr[0];
+			x2=arr[1];
+			arr=swapIfNecessary(y1, y2);
+			y1=arr[0];
+			y2=arr[1];			
 			buildShip(x1, x2, y1, y2);
 			br++;
 			System.out.println("Ship built successful.");
