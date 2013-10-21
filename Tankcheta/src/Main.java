@@ -5,18 +5,16 @@ public class Main {
 	public static int[][] table = new int[101][101];
 	public static Scanner sc = new Scanner(System.in);
 	public static int ships,br=0,iCoord=0,check,x1,x2,y1,y2;
-	
+			
 	public static int[] swapIfNecessary(int a, int b){
 		int[] ab= {a,b};
 		if (a>b){
 			iCoord=1;
 			int temp;
 			System.out.println("Invalid coordinate. They will be inverted.");
-			temp=a;
-			a=b;
-			b=temp;
-			ab[0]=a;
-			ab[1]=b;
+			temp=ab[0];
+			ab[0]=ab[1];
+			ab[1]=temp;
 			}
 		 return ab;
 	}
@@ -25,8 +23,8 @@ public class Main {
 		outerfor:
 			  for(int f1 = x1; f1 <= x2 ; f1++){
 			   for(int z1=y1; z1 <= y2 ; z1++){
-			    if( table[f1][z1] == 1 ) { 
-			     System.out.println("There is a ship. Please enter new coordinates.");
+			    if( table[f1][z1] == 1 || x1>100 || x2>100 || y1>100 || y2 >100 ) { 
+			     System.out.println("There is a ship or invalid coordinate. Please enter new coordinates.");
 			     System.out.printf("Enter first x: ");
 			     x1 = sc.nextInt();
 			     System.out.printf("Enter second x: ");
@@ -40,6 +38,7 @@ public class Main {
 			    }
 			   }
 			  }
+			
 		for(int f1 = x1; f1 <= x2 ; f1++){
 			for(int z1=y1; z1 <= y2 ; z1++){
 			table[f1][z1]=1;
