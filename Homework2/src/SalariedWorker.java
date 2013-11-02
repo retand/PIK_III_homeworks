@@ -25,7 +25,6 @@ public class SalariedWorker extends Worker {
 		this.hours = hours;
 	}
 
-	@Override
 	double getWeeklySalary(double hours, double hourSalary) {
 		double sum;
 		sum = hours * hourSalary;
