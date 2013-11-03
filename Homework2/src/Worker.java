@@ -24,6 +24,6 @@ public abstract class Worker {
 		setHourSalary(hourSalary);
 	}
 	
-	abstract double getWeeklySalary(double hours, double hourSalary);
+	abstract double getWeeklySalary();
 	abstract double getHours();
 }

@@ -25,10 +25,8 @@ public class SalariedWorker extends Worker {
 		this.hours = hours;
 	}
 
-	double getWeeklySalary(double hours, double hourSalary) {
-		double sum;
-		sum = hours * hourSalary;
-		return sum;
+	double getWeeklySalary() {
+		return getHours() * getHourSalary();
 	}
 	
 }

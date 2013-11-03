@@ -25,16 +25,16 @@ public class HourlyWorker extends Worker {
 		setHours(hours);
 	}
 
-	double getWeeklySalary(double hours, double hourSalary) {
-		double sum = 0;
-		if(hours>40){
-			hourSalary=hourSalary*1.5;
-			hours=hours-40;
-			sum = hours*hourSalary;
-			hourSalary = hourSalary/1.5;
-			hours=40;
+	double getWeeklySalary() {
+		double sum = 0,lHours=getHours(),lHourSalary=getHourSalary();
+		if(lHours>40){
+			lHourSalary=lHourSalary*1.5;
+			lHours=lHours-40;
+			sum = lHours*lHourSalary;
+			lHourSalary = lHourSalary/1.5;
+			lHours=40;
 		}
-		sum=sum+(hours*hourSalary);
+		sum=sum+(lHours*lHourSalary);
 		return sum;
 	}
 }
