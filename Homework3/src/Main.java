@@ -6,7 +6,7 @@ public class Main {
 		int brIgri, brRezults ;
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.println("Колко игри искате да се изгираят?");
+		System.out.println("Kolko igri da se izigraqt?");
 		brIgri = sc.nextInt();
 		
 		for (int z=0; z<brIgri ;z++){ // for cikyl za kolko pyti da se izigrae igrata
@@ -26,7 +26,7 @@ public class Main {
 		a.join();
 		b.join();
 		c.join();
-		System.out.println("Резултати.");
+		System.out.println("Rezultati.");
 		brRezults=4;
 		while (true){ // Printi rezultatite
 			System.out.println(arr[brRezults]);

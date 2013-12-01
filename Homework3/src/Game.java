@@ -26,11 +26,11 @@ public class Game implements Runnable{
 			arr[3] = this.random;
 		}
 		if(this.random == 1) {
-			System.out.println("Избора на играч "+this.nomer+" е камък.");
+			System.out.println("Izbora na igrach "+this.nomer+" e kamyk.");
 		}else if (this.random == 2){
-			System.out.println("Избора на играч "+this.nomer+" е ножица.");
+			System.out.println("Izbora na igrach "+this.nomer+" e nojica.");
 		}else {
-			System.out.println("Избора на играч "+this.nomer+" е хартия.");
+			System.out.println("Izbora na igrach "+this.nomer+" e hartiq.");
 		}
 	}
 	
