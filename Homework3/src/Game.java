@@ -18,13 +18,7 @@ public class Game implements Runnable{
 	
 	public synchronized void randomChoice(){ //Metod koito opredeleq na proizvolen princip izbora na igracha i go zapisva v masiva.
 		this.random = (int)(Math.random() * (max - min) + min);
-		if (arr[1] == 0){
-			arr[1] = this.random;
-		}else if(arr[2] == 0){
-			arr[2] = this.random;
-		}else {
-			arr[3] = this.random;
-		}
+		arr[this.nomer] = this.random;
 		if(this.random == 1) {
 			System.out.println("Izbora na igrach "+this.nomer+" e kamyk.");
 		}else if (this.random == 2){
